@@ -7,7 +7,7 @@ if(NOT WIN32)
 endif()
 
 # Early options
-option(DEPTHAI_ENABLE_LIBUSB "Enable usage of libusb and interaction with USB devices" ON)
+option(DEPTHAI_ENABLE_LIBUSB "Enable usage of libusb and interaction with USB devices" OFF)
 
 # Set to use native tls for windows before including Hunter (used for Curl)
 if(WIN32)

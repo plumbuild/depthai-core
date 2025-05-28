@@ -22,7 +22,7 @@ struct fmt::formatter<dai::Path> : formatter<std::string> {
     // https://fmt.dev/latest/api.html#formatting-user-defined-types
     // https://fmt.dev/latest/syntax.html#format-specification-mini-language
     template <typename FormatContext>
-    auto format(const dai::Path& p, FormatContext& ctx) {
+    auto format(const dai::Path& p, FormatContext& ctx) const {
         std::string output;
         try {
             output = p.string();
@@ -39,7 +39,7 @@ struct fmt::formatter<dai::CameraBoardSocket> : ostream_formatter {};
 
 template <>
 struct fmt::formatter<dai::DatatypeEnum> : fmt::formatter<std::string> {
-    auto format(dai::DatatypeEnum my, format_context& ctx) const -> decltype(ctx.out()) {
+    auto format(dai::DatatypeEnum my, format_context& ctx) const -> decltype(ctx.out()) const {
         return fmt::format_to(ctx.out(), "{}", static_cast<int32_t>(my));
     }
 };
