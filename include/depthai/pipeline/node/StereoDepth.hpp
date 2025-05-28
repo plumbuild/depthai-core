@@ -39,7 +39,7 @@ class StereoDepth : public NodeCRTP<Node, StereoDepth, StereoDepthProperties> {
     Properties& getProperties();
 
    private:
-    PresetMode presetMode = PresetMode::HIGH_DENSITY;
+    PresetMode presetMode = PresetMode::DEFAULT;
     std::shared_ptr<RawStereoDepthConfig> rawConfig;
 
    public:
